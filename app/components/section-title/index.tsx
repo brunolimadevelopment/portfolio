@@ -8,7 +8,7 @@ type SectionTitleProps = {
 
 export const SectionTitle = ({ title, subtitle, className }: SectionTitleProps) => {
 
-    console.log(className)
+
     return (
         <div className={cn('flex flex-col gap-4', className)}>
             <span className="font-mono text-sm text-emerald-400">{`../${subtitle}`}</span>
