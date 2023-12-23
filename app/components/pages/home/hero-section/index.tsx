@@ -29,8 +29,8 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
 
                     <div className="text-gray-400 my-6 text-sm sm:text-base"><RichText content={homeInfo.introduction.raw} /></div>
                     <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340]">
-                        {homeInfo.tecnologies.map((tech) => (
-                            <TechBadge name={tech.name} />
+                        {homeInfo.tecnologies.map((tech, index) => (
+                            <TechBadge key={index} name={tech.name} />
                         ))}
                     </div>
                     <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
