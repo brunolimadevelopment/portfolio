@@ -1,9 +1,12 @@
+'use client'
 import { TechBadge } from "@/app/components/tech-badge"
 import { WorkExperience } from "@/app/types/work-experience"
 import { RichText } from "@graphcms/rich-text-react-renderer"
 import { differenceInMonths, differenceInYears, format } from "date-fns"
 import ptBR from "date-fns/locale/pt-BR"
 import Image from "next/image"
+import { motion } from 'framer-motion'
+import { fadeUpAnimation, techBadgeAnimation } from '@/app/lib/animations'
 
 type ExperienceItemProps = {
     experience: WorkExperience
@@ -38,7 +41,11 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
             : `${months} mes${months > 1 ? 'es' : ''}`
 
     return (
-        <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
+        <motion.div
+            className="grid grid-cols-[40px,1fr] gap-4 md:gap-10"
+            {...fadeUpAnimation}
+            transition={{ duration: 0.5 }}
+        >
             <div className="flex flex-col items-center gap-4">
                 <div className="rounded-full border border-gray-500 w-20 h-28 flex items-center justify-center">
                     <Image unoptimized src={companyLogo.url} width={50} height={50} alt={`${companyName}`} />
@@ -57,12 +64,17 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
                     <div className="text-gray-400"><RichText content={description.raw} /></div>
                 </div>
                 <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">Competências</p>
-                <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
-                    {tecnologies?.map(tech => (
-                        <TechBadge key={`experience-${companyName}-tech-${tech.name}`} name={tech.name} />
+                <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[650px] mb-8">
+                    {tecnologies?.map((tech, index) => (
+                        <TechBadge
+                            key={`experience-${companyName}-tech-${tech.name}`}
+                            name={tech.name}
+                            {...techBadgeAnimation}
+                            transition={{ duration: 0.2, delay: index * 0.1 }}
+                        />
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
