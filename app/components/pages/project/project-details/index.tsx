@@ -26,7 +26,8 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
             />
-            <SectionTitle subtitle="projeto" title={project.title} className="text-center items-center sm:[&>h3]:text-4xl" />
+            <SectionTitle subtitle="projeto" title={project.title} empresa={project.empresa} className="text-center items-center sm:[&>h3]:text-4xl" />
+
             <motion.div
                 className="text-gray-400 text-center max-w-[640px] my-4 sm:my-6 text-sm sm:text-base"
                 {...fadeUpAnimation}

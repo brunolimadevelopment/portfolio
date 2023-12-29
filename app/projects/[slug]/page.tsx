@@ -31,6 +31,7 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
           }
           title
           shortDescription
+          empresa
           description {
             raw
             text

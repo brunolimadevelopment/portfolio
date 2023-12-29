@@ -23,6 +23,7 @@ export type Project = {
         url: string
     }
     title: string
+    empresa: string
     shortDescription: string
     tecnologies: Technology[]
     pageThumbnail: {
