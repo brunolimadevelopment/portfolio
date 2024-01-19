@@ -17,9 +17,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
             <HorizontalDivider className="mb-16" />
 
             <div>
-                {
-                
-                projects?.map((project) => (
+                {projects?.map((project) => (
                     <div key={project.slug}>
                         <ProjectCard project={project} />
                         <HorizontalDivider className="my-16" />
