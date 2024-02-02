@@ -44,7 +44,7 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
         }
       }`
 
-  return fetchHygraphQuery(query, 60 * 60 * 24)
+  return fetchHygraphQuery(query)
 }
 
 export default async function Project({ params: { slug } }: ProjectProps) {
@@ -65,7 +65,7 @@ export async function generateStaticParams() {
   // os 100 primeiros projetos
   const query = `
   query ProjectsSlugsQuery() {
-    projects(first: 100) {
+    projects(first: 100, orderBy: publishedAt_DESC) {
       slug
     }
   }`
@@ -73,7 +73,7 @@ export async function generateStaticParams() {
 
 
   const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query)
-
+  //console.log(projects)
   return projects
   
 }
