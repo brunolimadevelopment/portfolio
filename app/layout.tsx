@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { ReactNode } from 'react'
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <BackToTop />
         {children}
         <Analytics />
+        <SpeedInsights/>
         <ContactForm />
         <Footer />
       </body>
