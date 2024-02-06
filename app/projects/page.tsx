@@ -1,5 +1,5 @@
-import { PageIntroduction } from "../components/pages/projects/page-introduction";
-import { ProjectList } from "../components/pages/projects/projects-list";
+import { PageIntroduction } from "../pages/projects/page-introduction";
+import { ProjectList } from "../pages/projects/projects-list";
 import { ProjectsPageData } from "../types/page-info";
 import { fetchHygraphQuery } from "../utils/fetch-hygraph.query";
 

@@ -1,7 +1,7 @@
-import { HeroSection } from "./components/pages/home/hero-section";
-import { HighlightedProjects } from "./components/pages/home/highlighted-projects";
-import { KnownTechs } from "./components/pages/home/known-techs";
-import { WorkExperience } from "./components/pages/home/work-experience";
+import { HeroSection } from "./pages/home/hero-section";
+import { HighlightedProjects } from "./pages/home/highlighted-projects";
+import { KnownTechs } from "./pages/home/known-techs";
+import { WorkExperience } from "./pages/home/work-experience";
 import { HomePageData } from "./types/page-info";
 import { fetchHygraphQuery } from "./utils/fetch-hygraph.query";
 
