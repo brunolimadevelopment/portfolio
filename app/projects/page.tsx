@@ -10,7 +10,7 @@ export const metadata = {
 const getPageData = async (): Promise<ProjectsPageData> => {
 
   const query = `query ProjectsQuery {
-        projects {
+        projects(first: 100, orderBy: publishedAt_DESC) {
           shortDescription
           slug
           title
@@ -28,7 +28,7 @@ const getPageData = async (): Promise<ProjectsPageData> => {
 
 export default async function Projects() {
   const { projects } = await getPageData()
-
+  
   return (
     <>
       <PageIntroduction />

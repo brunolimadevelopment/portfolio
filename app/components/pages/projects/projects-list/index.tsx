@@ -11,6 +11,7 @@ type ProjectsListProps = {
 }
 
 export const ProjectList = ({ projects }: ProjectsListProps) => {
+    
     return (
         <section className="container py-32 grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6">
             {projects.map((project, index) => (
