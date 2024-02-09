@@ -26,7 +26,7 @@ const getPageData = async (): Promise<HomePageData> => {
           url
           iconSvg
         }
-        knownTechs {
+        knownTechs(first: 100) {
           iconSvg
           name
           startDate
@@ -63,7 +63,7 @@ const getPageData = async (): Promise<HomePageData> => {
   `
   return fetchHygraphQuery(
     query,
-    60 * 60 * 24 // a query fica cacheada por 24h
+    60 * 60 * 24// a query fica cacheada por 24h
   )
 }
 export default async function Home() {
